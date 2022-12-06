@@ -1,4 +1,5 @@
 import React from "react";
+import "./Pokecard.css";
 
 const Pokecard = (props) => {
   const IMG_URL =
@@ -8,6 +9,8 @@ const Pokecard = (props) => {
     <div className="pokecard">
       <h1>{props.name}</h1>
       <img src={Img_RC} alt="A pokemon" />
+      <div>Type: {props.type}</div>
+      <div>Exp: {props.exp}</div>
     </div>
   );
 };

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import Pokecard from "./components/Pokecard";
+import Pokecard from "./components/Pokecard/Pokecard";
 
 function App() {
   return (
     <div>
-      <Pokecard id={4} name="Charmander" type="fire" base_experience={62} />
+      <Pokecard id={4} name="Charmander" type="fire" exp={62} />
     </div>
   );
 }
