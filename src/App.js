@@ -4,14 +4,19 @@ import axios from "axios";
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [Loading, setLoading] = useState(true);
+  let cancel;
 
   useEffect(() => {
     setLoading(true);
-    axios.get("https://pokeapi.co/api/v2/pokemon/1").then((res) => {
-      setLoading(false);
-      const pokeData = res.data;
-      setPokemon(pokeData);
-    });
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/1", {
+        cancelToken: new axios.cancelToken((c) => (cancel = c)),
+      })
+      .then((res) => {
+        setLoading(false);
+        const pokeData = res.data;
+        setPokemon(pokeData);
+      });
   }, []);
   if (Loading) {
     return "Loading...";
