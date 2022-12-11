@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Pokedex />
-      {/*🟡Next Step: Continue with app structure from React course 🟡*/}
+      {/*🟡Next Step: Add pokeData from button event 🟡*/}
     </div>
   );
 }
