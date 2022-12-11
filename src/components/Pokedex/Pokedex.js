@@ -12,10 +12,22 @@ const Pokedex = () => {
     axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
       setLoading(false); // Set loading state to false after promise is fulfilled
       const pokeData = res.data.results;
+      const pokeData2 = res.data;
+      console.log(pokeData2);
       setPokemon(pokeData); // Set pokemon state to contain response data
       console.log(pokeData);
     });
   }, []);
+
+  // Getting the individual pokemon data
+  const getPokedata = () => {
+    axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
+      setLoading(false); // Set loading state to false after promise is fulfilled
+      const pokeData = res.data.results;
+
+      setPokemon(pokeData); // Set pokemon state to contain response data
+    });
+  };
 
   // Set condition for loading state
   if (Loading) {
@@ -25,9 +37,8 @@ const Pokedex = () => {
   return (
     <div className="Pokedex">
       <h1>Pokemon</h1>
-
       {pokemon.map((p) => (
-        <Pokecard id={p.id} name={p.name} base_experience={p.base_experience} />
+        <Pokecard url={p.url} name={p.name} />
       ))}
     </div>
   );
