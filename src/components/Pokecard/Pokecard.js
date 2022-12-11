@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Pokecard.css";
+import axios from "axios";
 
 const Pokecard = (props) => {
+  const [pokemon, setPokemon] = useState([]);
   const IMG_URL =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
@@ -19,13 +21,21 @@ const Pokecard = (props) => {
   // Initialize the image URL for each pokemon
   let Img_RC = `${IMG_URL}${idNum}.png`;
 
-  console.log(idNum);
+  // Getting the individual pokemon data
+  const getPokedata = () => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${idNum}`).then((res) => {
+      const pokeData = res.data;
+      setPokemon(pokeData); // Set pokemon state to contain response data
+      console.log(pokeData);
+    });
+  };
   return (
     <div className="pokecard">
       <h1>{props.name}</h1>
       <img src={Img_RC} alt="A pokemon" />
       {/* <div>Type: {props.type}</div> */}
       {/* <div>Exp: {props.base_experience}</div> */}
+      <button onClick={getPokedata}>DETAILS</button>
     </div>
   );
 };

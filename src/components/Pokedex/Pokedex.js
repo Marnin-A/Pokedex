@@ -19,16 +19,6 @@ const Pokedex = () => {
     });
   }, []);
 
-  // Getting the individual pokemon data
-  const getPokedata = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
-      setLoading(false); // Set loading state to false after promise is fulfilled
-      const pokeData = res.data.results;
-
-      setPokemon(pokeData); // Set pokemon state to contain response data
-    });
-  };
-
   // Set condition for loading state
   if (Loading) {
     return "Loading...";
