@@ -29,6 +29,7 @@ const Pokecard = (props) => {
       console.log(pokeData);
     });
   };
+
   return (
     <div className="pokecard">
       <h1>{props.name}</h1>
