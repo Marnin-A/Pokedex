@@ -6,9 +6,6 @@ const Pokedex = () => {
   // Set pokemon and Loading states
   const [Loading, setLoading] = useState(true);
 
-  // Set page counter state
-  const [counter, setCounter] = useState(1);
-
   // Set useEffect with axios to get API data
   useEffect(() => {
     setLoading(true); // Set initial loading state
@@ -27,38 +24,12 @@ const Pokedex = () => {
     return "Loading...";
   }
 
-  // Page counter
-  //increase counter
-  const increase = () => {
-    setCounter((count) => count + 1);
-  };
-
-  //decrease counter
-  const decrease = () => {
-    if (counter === 1) {
-      setCounter(1);
-    } else {
-      setCounter((counter) => counter - 1);
-    }
-  };
-
   return (
     <div className="Pokedex">
       <h1>Pokemon</h1>
       {pokemon.map((p) => (
         <Pokecard url={p.url} name={p.name} />
       ))}
-
-      {/* Page counter */}
-      <div className="btn__container">
-        <button className="control__btn" onClick={decrease}>
-          Previous
-        </button>
-        <span className="counter__output">{counter}</span>
-        <button className="control__btn" onClick={increase}>
-          Next
-        </button>
-      </div>
     </div>
   );
 };
