@@ -6,8 +6,9 @@ function App() {
   return (
     <div className="App">
       <Pokedex />
-      {/*🟡Next features: 1. Attach previous and next functions🟡
-                          2. Add pokemon loading screen*/}
+      {/*🟡Next features: 1. Add pokemon loading screen
+                          2. Remove Console Logs at the end of project🟡
+       */}
     </div>
   );
 }

@@ -10,18 +10,32 @@ const Pokedex = () => {
   // Set page counter state
   const [counter, setCounter] = useState(1);
 
+  // Set current page url
+  const [currentUrl, setCurrentUrl] = useState(
+    "https://pokeapi.co/api/v2/pokemon/"
+  );
+
+  //Set next page Url
+  const [nextUrl, setNextUrl] = useState();
+
+  //Set previous page Url
+  const [previousUrl, setPreviousUrl] = useState();
+
   // Set useEffect with axios to get API data
   useEffect(() => {
     setLoading(true); // Set initial loading state
-    axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
+    axios.get(currentUrl).then((res) => {
       setLoading(false); // Set loading state to false after promise is fulfilled
       const pokeData = res.data.results;
       const pokeData2 = res.data;
       console.log(pokeData2);
       setPokemon(pokeData); // Set pokemon state to contain response data
+      setPreviousUrl(pokeData2.previous);
+      setNextUrl(pokeData2.next);
+
       console.log(pokeData);
     });
-  }, []);
+  }, [currentUrl]);
 
   // Set condition for loading state
   if (Loading) {
@@ -33,6 +47,7 @@ const Pokedex = () => {
   //increase counter
   const increase = () => {
     setCounter((count) => count + 1);
+    setCurrentUrl(nextUrl);
   };
 
   //decrease counter
@@ -41,6 +56,7 @@ const Pokedex = () => {
       setCounter(1);
     } else {
       setCounter((counter) => counter - 1);
+      setCurrentUrl(previousUrl);
     }
   };
 
