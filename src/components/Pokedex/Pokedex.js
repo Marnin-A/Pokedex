@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Pokecard from "../Pokecard/Pokecard";
 import axios from "axios";
+import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
 import "./Pokedex.css";
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -39,7 +40,11 @@ const Pokedex = () => {
 
   // Set condition for loading state
   if (Loading) {
-    return "Loading...";
+    return (
+      <div>
+        <img className="LoadingScreen" src={LoadingScreen} alt="Loading" />
+      </div>
+    );
   }
 
   // Page counter

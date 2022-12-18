@@ -3,6 +3,13 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+.LoadingScreen {
+  display: flex;
+  height: 100px;
+  align-self: center;
+  justify-self: center;
+}
 .title {
   display: flex;
   justify-content: center;
