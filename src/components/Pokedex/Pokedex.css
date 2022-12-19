@@ -10,6 +10,15 @@
   align-self: center;
   justify-self: center;
 }
+
+h1 {
+  min-height: min-content;
+}
+
+.PokemonLogo {
+  height: 10%;
+}
+
 .title {
   display: flex;
   justify-content: center;

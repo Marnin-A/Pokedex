@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Pokecard from "../Pokecard/Pokecard";
 import axios from "axios";
 import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
+import PokemonLogo from "../../assets/Pokémon_logo.avif";
 import "./Pokedex.css";
+
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
   // Set pokemon and Loading states
@@ -68,7 +70,7 @@ const Pokedex = () => {
   return (
     <div className="Pokedex">
       <div className="title">
-        <h1>Pokemon</h1>
+        <img className="PokemonLogo" src={PokemonLogo} alt="Pokemon Logo" />
       </div>
       {pokemon.map((p) => (
         <Pokecard url={p.url} name={p.name} />
