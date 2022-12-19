@@ -1,13 +1,15 @@
 .pokecard {
   width: 200px;
-  height: 300px;
+  height: 250px;
   border: 2px solid #3469b4;
   display: flex;
+  font-size: 0.8em;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 30px;
   display: inline-flex;
   border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: -20px 20px 60px #fae9aa, 20px -20px 60px #ffffff;
+  background: #fae9aa;
+  box-shadow: -20px 20px 60px #e0e0e0, 20px -20px 60px #ffffff;
 }
