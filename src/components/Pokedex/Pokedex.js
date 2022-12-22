@@ -67,6 +67,8 @@ const Pokedex = () => {
     }
   };
 
+  // Display Details
+
   return (
     <div className="Pokedex">
       <div className="title">
