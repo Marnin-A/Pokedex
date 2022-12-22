@@ -1,6 +1,7 @@
 .pokecard {
   width: 200px;
   height: 250px;
+  max-height: max-content;
   border: 2px solid #3469b4;
   display: flex;
   font-size: 0.8em;
