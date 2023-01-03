@@ -23,6 +23,7 @@ const Pokecard = (props) => {
     <div className="pokecard">
       <h1>{props.name}</h1>
       <img src={Img_RC} alt="A pokemon" />
+      <button>Stats</button>
     </div>
   );
 };

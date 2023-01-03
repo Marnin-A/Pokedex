@@ -4,6 +4,7 @@ import axios from "axios";
 import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
 import PokemonLogo from "../../assets/Pokémon_logo.avif";
 import "./Pokedex.css";
+import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
 
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
