@@ -31,7 +31,6 @@ const Pokedex = () => {
       setLoading(false); // Set loading state to false after promise is fulfilled
       const pokeData = res.data.results;
       const pokeData2 = res.data;
-      console.log(pokeData2);
       setPokemon(pokeData); // Set pokemon state to contain response data
       setPreviousUrl(pokeData2.previous);
       setNextUrl(pokeData2.next);
