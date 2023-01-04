@@ -14,8 +14,11 @@
   background: #fae9aa;
   box-shadow: -20px 20px 60px #e0e0e0, 20px -20px 60px #ffffff;
 }
-button {
+.statsbtn {
   border: 0.5px solid #3469b4;
   border-radius: 5px;
   background-color: #bdbdbd;
+}
+.statsbtn:hover {
+  border: 0.5px solid rgb(116, 7, 7);
 }

@@ -1,10 +1,9 @@
+import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
+import PokemonLogo from "../../assets/Pokémon_logo.avif";
 import React, { useState, useEffect } from "react";
 import Pokecard from "../Pokecard/Pokecard";
 import axios from "axios";
-import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
-import PokemonLogo from "../../assets/Pokémon_logo.avif";
 import "./Pokedex.css";
-import LoadingScreen from "../../assets/pokeball-loading-animation.gif";
 
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
@@ -32,6 +31,7 @@ const Pokedex = () => {
       setLoading(false); // Set loading state to false after promise is fulfilled
       const pokeData = res.data.results;
       const pokeData2 = res.data;
+      console.log(pokeData2);
       setPokemon(pokeData); // Set pokemon state to contain response data
       setPreviousUrl(pokeData2.previous);
       setNextUrl(pokeData2.next);
@@ -48,7 +48,6 @@ const Pokedex = () => {
   }
 
   // Page counter
-
   //increase counter
   const increase = () => {
     setCounter((count) => count + 1);

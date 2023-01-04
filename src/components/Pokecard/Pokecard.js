@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Pokecard.css";
 
 const Pokecard = (props) => {
@@ -19,11 +20,20 @@ const Pokecard = (props) => {
   // Initialize the image URL for each pokemon
   let Img_RC = `${IMG_URL}${idNum}.png`;
 
+  // Define a function to handle the button click
+  const navigate = useNavigate();
+  function HandleClick() {
+    localStorage.setItem("name", JSON.stringify(props.name));
+    navigate(`/pokemon/${props.name}`);
+  }
+
   return (
     <div className="pokecard">
       <h1>{props.name}</h1>
       <img src={Img_RC} alt="A pokemon" />
-      <button>Stats</button>
+      <button className="statsbtn" onClick={HandleClick()}>
+        Stats
+      </button>
     </div>
   );
 };
